@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/online-authentication
+docs: https://docs.chalk.ai/docs/online-authentication
+discovery: https://api.chalk.ai/.well-known/openid-configuration
+summary:
+  types: [oauth2, http]
+  http_schemes: [bearer]
+  oauth2_flows: [clientCredentials, authorizationCode]
+  token_endpoint: https://api.chalk.ai/v1/oauth/token
+  authorization_endpoint: https://api.chalk.ai/v1/oauth/authorize
+  registration_endpoint: https://api.chalk.ai/v1/oauth/register
+schemes:
+- name: OAuth2ClientCredentials
+  type: oauth2
+  flow: clientCredentials
+  token_url: https://api.chalk.ai/v1/oauth/token
+  token_auth_methods: [client_secret_post, client_secret_basic]
+  description: >-
+    Primary programmatic auth. Exchange client_id + client_secret (grant_type=client_credentials)
+    for a short-lived Bearer access_token, then send Authorization: Bearer <token>.
+    Credentials are minted in the dashboard (Personal = full account access; Service =
+    scoped to a project + environment). `chalk token` returns a ready-to-use access token.
+- name: OAuth2AuthorizationCode
+  type: oauth2
+  flow: authorizationCode
+  authorization_url: https://api.chalk.ai/v1/oauth/authorize
+  token_url: https://api.chalk.ai/v1/oauth/token
+  pkce: S256
+  scopes: [mcp:read, mcp:write]
+  description: >-
+    Authorization-code + PKCE flow with dynamic client registration, advertised in the
+    RFC 8414 oauth-authorization-server metadata with mcp:read/mcp:write scopes for MCP clients.
+- name: BearerToken
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  description: RS256-signed JWT access tokens (claims include team_id, environment_id, project_id, kind).
+rbac:
+  note: >-
+    Service tokens support feature-level RBAC via tags mapped to four levels —
+    Deny, AllowInternal, Allow, AllowDownstream — controlling whether a feature can be
+    computed, returned, or declassified in downstream queries.
