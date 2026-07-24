@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: live fetch of /.well-known/* on api.chalk.ai and chalk.ai
+host: https://api.chalk.ai
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: chalk-openid-configuration.json
+  note: OIDC discovery — issuer https://api.chalk.ai, RS256, grant types authorization_code + client_credentials
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: chalk-oauth-authorization-server.json
+  note: RFC 8414 — advertises mcp:read/mcp:write scopes, dynamic client registration, PKCE S256
+- path: /.well-known/jwks.json
+  status: 200
+  file: null
+  note: JWKS signing keys (not saved verbatim)
+- path: /.well-known/security.txt
+  status: 404
+  host: https://chalk.ai
+- path: /.well-known/api-catalog
+  status: 404
+  host: https://chalk.ai
+- path: /.well-known/ai-plugin.json
+  status: 404
+  host: https://chalk.ai

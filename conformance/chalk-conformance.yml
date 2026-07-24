@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/security
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 client_credentials + authorization_code flows; published token/authorization endpoints.
+- id: oidc
+  conforms: true
+  evidence: /.well-known/openid-configuration present (issuer https://api.chalk.ai, RS256, userinfo endpoint).
+- id: rfc8414-oauth-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server present with registration endpoint + PKCE S256.
+- id: mcp
+  conforms: partial
+  evidence: OAuth metadata advertises mcp:read/mcp:write scopes; hosted MCP endpoint unconfirmed.
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type 2 certified (report available on request via security@chalk.ai).
+- id: iso27001
+  conforms: true
+  evidence: ISO/IEC 27001:2022 certified (certificate available on request).
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No OpenAPI/error reference captured; error envelope not confirmed as application/problem+json.
+compliance_program:
+  certifications: [SOC 2 Type 2, ISO/IEC 27001:2022]
+  encryption: {at_rest: AES-256, in_transit: TLSv1.2+}
+  docs: https://docs.chalk.ai/docs/security

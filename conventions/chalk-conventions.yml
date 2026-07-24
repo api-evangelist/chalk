@@ -1,0 +1,41 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/query-basics
+authentication:
+  style: OAuth2 Bearer (client_credentials); see authentication/chalk-authentication.yml
+  header: "Authorization: Bearer <access_token>"
+transport:
+  protocols: [rest, grpc]
+  note: >-
+    Client libraries (Python, TypeScript, Go, Java, C#) use gRPC; a REST API is also
+    exposed for fetching feature values.
+base_url: https://api.chalk.ai
+versioning:
+  scheme: uri-path
+  observed_versions: [v1, v4]
+  examples:
+  - POST https://api.chalk.ai/v1/query/online
+  - POST https://api.chalk.ai/v1/query/feather
+  - POST https://api.chalk.ai/v1/query/run
+  - GET  https://api.chalk.ai/v4/offline_query/status
+routing:
+  environment: "requests carry an `environment` parameter selecting a deployment context"
+  branch: "optional `branch` / `branch_id` routes a request to an isolated branch deployment"
+core_operations:
+- name: query
+  http: POST /v1/query/online
+  description: Online single-row feature query, single-digit millisecond latency.
+- name: query_bulk
+  http: POST /v1/query/feather
+  description: Bulk online query (Arrow/feather payload).
+- name: offline_query
+  http: POST /v1/query/run
+  description: Asynchronous offline dataset generation; poll status at /v4/offline_query/status.
+idempotency:
+  supported: unknown
+  note: No documented idempotency-key header found; not asserting Idempotency support.
+cross_links:
+  authentication: authentication/chalk-authentication.yml
+  scopes: scopes/chalk-scopes.yml
+  lifecycle: lifecycle/chalk-lifecycle.yml
+  changelog: changelog/chalk-changelog.yml

@@ -1,0 +1,41 @@
+generated: '2026-07-18'
+method: searched
+source: npm, PyPI, pkg.go.dev, Maven Central, NuGet + github.com/chalk-ai
+packages:
+- language: python
+  registry: pypi
+  name: chalkpy
+  url: https://pypi.org/project/chalkpy/
+  install: pip install chalkpy
+  version: 2.154.4
+  official: true
+  repo: https://github.com/chalk-ai/chalkpy
+- language: typescript
+  registry: npm
+  name: "@chalk-ai/client"
+  url: https://www.npmjs.com/package/@chalk-ai/client
+  install: npm install @chalk-ai/client
+  official: true
+  repo: https://github.com/chalk-ai/chalk-ts
+- language: go
+  registry: pkg.go.dev
+  name: github.com/chalk-ai/chalk-go
+  url: https://pkg.go.dev/github.com/chalk-ai/chalk-go
+  install: go get github.com/chalk-ai/chalk-go
+  official: true
+  repo: https://github.com/chalk-ai/chalk-go
+- language: java
+  registry: maven
+  name: ai.chalk:chalk-java
+  url: https://central.sonatype.com/artifact/ai.chalk/chalk-java
+  install: "implementation 'ai.chalk:chalk-java:1.2.1'"
+  version: 1.2.1
+  official: true
+  repo: https://github.com/chalk-ai/chalk-java
+- language: csharp
+  registry: nuget
+  name: Chalk.Client
+  url: https://www.nuget.org/packages/Chalk.Client
+  install: dotnet add package Chalk.Client
+  official: true
+  repo: https://github.com/chalk-ai/chalk-csharp

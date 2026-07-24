@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/changelog
+scheme: date-based
+current_as_of: '2026-03-27'
+entries:
+- date: '2026-03-27'
+  highlights:
+  - Parse Expressions for stream resolvers — displays the compiled C++ expression alongside the original Python.
+  - Online query reruns from the dashboard with pre-filled config (previously offline-only).
+  breaking: false
+- date: '2026-03-20'
+  highlights:
+  - Team-scoped access tokens for programmatic access across environments.
+  - Dark mode toggle in the dashboard.
+  - Resource-group support for streaming resolvers.
+  breaking: false
+- date: '2026-03-13'
+  highlights:
+  - Access-logs page filterable by status code and request path, with Kubernetes event overlays.
+  - chalk.functions.vertex_predict — run predictions against Vertex AI endpoints.
+  breaking: false
+- date: '2026-03-06'
+  highlights:
+  - Chart annotations — vertical lines, shaded time ranges, and text annotations.
+  breaking: false
+note: Recent window only; live changelog at the source URL is authoritative.

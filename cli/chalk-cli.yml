@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/cli/chalk
+binary: chalk
+install:
+- platform: linux/macos
+  command: curl -s -L https://api.chalk.ai/install.sh | sh
+- platform: windows
+  command: download https://storage.googleapis.com/cli-go.chalk-prod.chalk.ai/latest/chalk-windows-amd64
+command_groups:
+- group: setup
+  commands: [login, config, init, project, environment]
+- group: basic
+  commands: [apply, query, lint, delete]
+- group: batch_jobs
+  commands: [trigger, incremental, aggregate, jobs, workflows]
+- group: tasks
+  commands: [task run, task cancel, task get]
+- group: scheduled
+  commands: [scheduled-resolver, scheduled-query]
+- group: datasets
+  commands: [dataset list, dataset get, dataset download, dataset upload]
+- group: dev_tools
+  commands: [topic push, diff, source, branch, shell]
+- group: benchmarking
+  commands: [benchmark run, benchmark upload, benchmark download]
+- group: information
+  commands: [resolvers, features, logs, healthcheck, pods]
+- group: codegen
+  commands: [codegen python, codegen go, codegen java, codegen typescript]
+key_flows:
+- flow: authenticate
+  detail: "chalk login (browser) mints client_id/client_secret; chalk token returns a Bearer access token"
+- flow: deploy
+  detail: "chalk apply deploys feature/resolver definitions; chalk branch creates isolated branch deployments"
+- flow: query
+  detail: "chalk query fetches feature values from the online store"

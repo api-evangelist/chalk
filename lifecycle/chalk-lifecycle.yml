@@ -1,0 +1,22 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/changelog
+versioning:
+  scheme: uri-path
+  observed_versions: [v1, v4]
+  docs: https://docs.chalk.ai/docs/query-basics
+release_cadence:
+  scheme: date-based
+  changelog: https://docs.chalk.ai/docs/changelog
+deployment_model:
+  note: >-
+    Branch-based deployment model — feature/resolver changes deploy to isolated branches
+    for preview/testing before promotion; supports feature versioning.
+status_page: https://chalk.statuspage.io
+sla:
+  url: null
+  note: No public uptime SLA target published.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No formal deprecation policy or RFC 8594 Sunset header support documented.

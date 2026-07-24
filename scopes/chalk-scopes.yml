@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.chalk.ai/.well-known/oauth-authorization-server
+docs: https://docs.chalk.ai/docs/online-authentication
+schemes:
+- name: OAuth2
+  source: https://api.chalk.ai/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.chalk.ai/v1/oauth/authorize
+    tokenUrl: https://api.chalk.ai/v1/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://api.chalk.ai/v1/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication scope (openid-configuration discovery).
+  flows: [authorizationCode]
+  sources: [well-known/chalk-openid-configuration.json]
+- scope: mcp:read
+  description: Read access for Model Context Protocol (MCP) clients.
+  flows: [authorizationCode]
+  sources: [well-known/chalk-oauth-authorization-server.json]
+- scope: mcp:write
+  description: Write access for Model Context Protocol (MCP) clients.
+  flows: [authorizationCode]
+  sources: [well-known/chalk-oauth-authorization-server.json]
+note: >-
+  Programmatic feature access via client_credentials does not use a documented scope surface;
+  fine-grained control is enforced through service-token RBAC tags (see authentication/chalk-authentication.yml),
+  not OAuth scopes. The scopes above are the published OAuth/MCP scopes.

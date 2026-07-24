@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+status: candidate
+source: https://api.chalk.ai/.well-known/oauth-authorization-server
+evidence: >-
+  Chalk's published RFC 8414 authorization-server metadata advertises MCP OAuth scopes
+  (mcp:read, mcp:write), a dynamic client registration endpoint, and PKCE (S256) — the
+  standard OAuth surface a remote MCP server exposes. The concrete MCP transport endpoint
+  could not be confirmed by probe (api.chalk.ai returns a catch-all version response for
+  unmatched paths), so the endpoint below is unconfirmed and this is marked candidate.
+server:
+  name: chalk
+  transport: http
+  url: null
+  oauth:
+    authorization_endpoint: https://api.chalk.ai/v1/oauth/authorize
+    token_endpoint: https://api.chalk.ai/v1/oauth/token
+    registration_endpoint: https://api.chalk.ai/v1/oauth/register
+    scopes: [mcp:read, mcp:write]
+    pkce: S256
+tools: []
+note: >-
+  Chalk positions itself as a real-time data platform for agents; the MCP scopes indicate
+  an agent/MCP access path exists. No tool manifest is published; capture as candidate.

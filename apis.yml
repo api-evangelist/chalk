@@ -1,8 +1,14 @@
 aid: chalk
 name: Chalk
-description: Chalk is a company surfaced as a portfolio company of felicis, general-catalyst and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Chalk is a real-time AI/ML data platform ("Context Engine") that lets teams define features,
+  embeddings, LLM outputs, and prompts once in Python and serve them everywhere — training,
+  real-time inference, and agents — computed on infrastructure the customer controls. Instead of
+  stitching together a feature store, vector database, retrieval and prompt tooling, orchestration,
+  and a sandbox runtime, Chalk unifies them: features are point-in-time correct, served in
+  single-digit milliseconds, and deployed via a branch-based model inside the customer's own cloud.
+  It exposes a REST API and gRPC client libraries (Python, TypeScript, Go, Java, C#), a first-party
+  CLI, OAuth 2.0 authentication, and MCP-scoped agent access. Backed by Felicis and General Catalyst.
 url: https://raw.githubusercontent.com/api-evangelist/chalk/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +17,52 @@ x-backed-by:
 - general-catalyst
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://chalk.ai/opengraph.png
 tags:
 - Company
-apis: []
+- Machine Learning
+- Feature Store
+- Artificial Intelligence
+- Data Platform
+- MLOps
+- Real-Time Data
+- LLM
+- Agents
+- Feature Engineering
+apis:
+- name: Chalk API
+  description: >-
+    REST + gRPC API for querying features from the Chalk Context Engine — online single-row queries,
+    bulk (feather/Arrow) queries, and asynchronous offline dataset generation — plus deployment of
+    feature and resolver definitions. OAuth 2.0 (client_credentials) Bearer authentication.
+  humanURL: https://docs.chalk.ai/api-docs
+  baseURL: https://api.chalk.ai
+  tags:
+  - Machine Learning
+  - Feature Store
+  - Real-Time Data
+  properties:
+  - type: Authentication
+    url: authentication/chalk-authentication.yml
+  - type: OAuthScopes
+    url: scopes/chalk-scopes.yml
+  - type: Conventions
+    url: conventions/chalk-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +71,66 @@ maintainers:
 common:
 - type: Website
   url: https://chalk.ai
+- type: DeveloperPortal
+  url: https://docs.chalk.ai
+- type: Documentation
+  url: https://docs.chalk.ai/docs/overview
+- type: APIReference
+  url: https://docs.chalk.ai/api-docs
+- type: GettingStarted
+  url: https://docs.chalk.ai/docs/getting-started
+- type: Blog
+  url: https://chalk.ai/blog
+- type: GitHubOrganization
+  url: https://github.com/chalk-ai
+- type: Login
+  url: https://chalk.ai/login
+- type: SignUp
+  url: https://chalk.ai/book-demo
+- type: TermsOfService
+  url: https://chalk.ai/legal/terms
+- type: PrivacyPolicy
+  url: https://chalk.ai/legal/privacy
+- type: StatusPage
+  url: https://chalk.statuspage.io
+- type: ChangeLog
+  url: https://docs.chalk.ai/docs/changelog
+- type: ChangeLog
+  url: changelog/chalk-changelog.yml
+- type: Authentication
+  url: authentication/chalk-authentication.yml
+- type: OAuthScopes
+  url: scopes/chalk-scopes.yml
+- type: Packages
+  url: packages/chalk-packages.yml
+- type: SDKs
+  url: packages/chalk-packages.yml
+- type: CLI
+  url: cli/chalk-cli.yml
+- type: MCPServer
+  url: mcp/chalk-mcp.yml
+- type: LLMsTxt
+  url: llms/chalk-llms.txt
+- type: WellKnown
+  url: well-known/chalk-well-known.yml
+- type: Conventions
+  url: conventions/chalk-conventions.yml
+- type: Lifecycle
+  url: lifecycle/chalk-lifecycle.yml
+- type: Sandbox
+  url: sandbox/chalk-sandbox.yml
+- type: Conformance
+  url: conformance/chalk-conformance.yml
+- type: Compliance
+  url: https://docs.chalk.ai/docs/security
+- type: DomainSecurity
+  url: security/chalk-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/chalk-vulnerability-disclosure.yml
+- type: Security
+  url: https://docs.chalk.ai/docs/security
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

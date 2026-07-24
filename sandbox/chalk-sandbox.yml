@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chalk.ai/docs/branches
+model: branch-based deployments
+description: >-
+  Chalk has no test-card/magic-value sandbox (it is a data platform, not a payments API).
+  Its testing surface is isolated branch deployments: changes to features and resolvers can
+  be deployed to a named branch and queried in isolation before promotion to the main
+  environment, so pipelines can be validated against real data sources without affecting
+  production.
+mechanisms:
+- name: branches
+  detail: "Create an isolated deployment with `chalk apply --branch <name>` / `chalk branch`; route queries with the branch / branch_id parameter."
+- name: environments
+  detail: "Requests carry an `environment` parameter selecting the deployment context (e.g. staging vs production)."
+- name: preview_deploys
+  detail: "Branch deployments act as previews for feature-pipeline changes prior to promotion."
+note: No published static test credentials or fixture values; never fabricated.
