@@ -35,6 +35,17 @@ modified: '2026-07-18'
 image: https://chalk.ai/opengraph.png
 tags:
 - Company
+- Machine-Learning
+- Feature Store
+- Artificial Intelligence
+- Data Platform
+- MLOps
+- Real-Time Data
+- LLM
+- Agents
+- Feature Engineering
+tags_raw:
+- Company
 - Machine Learning
 - Feature Store
 - Artificial Intelligence
@@ -53,6 +64,10 @@ apis:
   humanURL: https://docs.chalk.ai/api-docs
   baseURL: https://api.chalk.ai
   tags:
+  - Machine-Learning
+  - Feature Store
+  - Real-Time Data
+  tags_raw:
   - Machine Learning
   - Feature Store
   - Real-Time Data
