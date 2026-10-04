@@ -46,7 +46,7 @@ modified: '2026-07-18'
 image: https://chalk.ai/opengraph.png
 tags:
 - Company
-- Machine-Learning
+- Machine Learning
 - Feature Store
 - Artificial Intelligence
 - Data Platform
@@ -66,6 +66,7 @@ tags_raw:
 - LLM
 - Agents
 - Feature Engineering
+- Machine-Learning
 apis:
 - name: Chalk API
   description: >-
@@ -75,13 +76,14 @@ apis:
   humanURL: https://docs.chalk.ai/api-docs
   baseURL: https://api.chalk.ai
   tags:
-  - Machine-Learning
+  - Machine Learning
   - Feature Store
   - Real-Time Data
   tags_raw:
   - Machine Learning
   - Feature Store
   - Real-Time Data
+  - Machine-Learning
   properties:
   - type: Authentication
     url: authentication/chalk-authentication.yml
